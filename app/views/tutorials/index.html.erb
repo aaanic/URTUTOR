@@ -1,2 +1,15 @@
-<h1>Tutorials#index</h1>
-<p>Find me in app/views/tutorials/index.html.erb</p>
+<h1>What would you like to learn today?</h1>
+<p>Find your next challenge. Select a tutorial from all the contributions by other users. Or create your own.</p>
+
+<div class="cards">
+<% @tutorials.each do |tutorial| %>
+<div class="card" style="width: 18rem;">
+  <img src="<%= tutorial.image_link %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= tutorial.title %></h5>
+    <p class="card-text"><%= tutorial.description %></p>
+    <%= link_to "Learn more", tutorial_path(tutorial), class: 'btn btn-primary' %>
+  </div>
+</div>
+<% end %>
+</div>
