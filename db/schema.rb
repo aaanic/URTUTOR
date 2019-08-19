@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_111252) do
+ActiveRecord::Schema.define(version: 2019_08_19_111544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lessons", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tutorial_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tutorial_id"], name: "index_lessons_on_tutorial_id"
+    t.index ["user_id"], name: "index_lessons_on_user_id"
+  end
 
   create_table "tutorials", force: :cascade do |t|
     t.string "title"
@@ -42,5 +51,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_111252) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lessons", "tutorials"
+  add_foreign_key "lessons", "users"
   add_foreign_key "tutorials", "users"
 end
