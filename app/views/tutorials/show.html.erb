@@ -1,2 +1,6 @@
-<h1>Tutorials#show</h1>
-<p>Find me in app/views/tutorials/show.html.erb</p>
+<h1><%= @tutorial.title %></h1>
+<p><%= @tutorial.category %></p>
+<img src="<%= @tutorial.image_link %>">
+<p><%= @tutorial.description %></p>
+<li><%= link_to "Back to Tutorials", tutorials_path %></li>
+
