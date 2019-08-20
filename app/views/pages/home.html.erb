@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://source.unsplash.com/user/erondu/pX91vVDV6GQ)">
+  <div class="banner-container">
+    <h1>Learn anything!</h1>
+    <h4>What would like to learn today? Find your tutorial. </h4>
+  </div>
+</div>
+
+<div class="container">
+  <div class="tutorials-container">
+    <div>
+      <h4>Urtutor offers tutorials for:</h4>
+      <ul class="vertical-category-list">
+        <% @categories.each do |c| %>
+        <li class="list-item-category"><%= c %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="teaser-cards">
+      <h3>Popular classes:</h3>
+      <ul>
+        <% @tutorials.each do |t| %>
+        <li><%= t.title %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
