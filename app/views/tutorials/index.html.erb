@@ -1,15 +1,24 @@
-<h1>What would you like to learn today?</h1>
-<p>Find your next challenge. Select a tutorial from all the contributions by other users. Or create your own.</p>
-
-<div class="cards">
-<% @tutorials.each do |tutorial| %>
-<div class="card" style="width: 18rem;">
-  <img src="<%= tutorial.image_link %>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%= tutorial.title %></h5>
-    <p class="card-text"><%= tutorial.description %></p>
-    <%= link_to "Learn more", tutorial_path(tutorial), class: 'btn btn-primary' %>
+<div class="container">
+  <div class="index-grid-container">
+    <% @tutorials.each do |tut| %>
+      <div class="box">
+        <div class="card-container">
+          <div class="card">
+            <div class="card-left">
+              <div class="image" style="background-image: url(<%= tut.image_link %>)" ></div>
+            </div>
+            <div class="card-right">
+              <div class="card-title">
+                <h3><%= tut.title %></h3>
+              </div>
+            </div>
+            <div class="card-action center">
+              <%= link_to "View Tutorial", tutorial_path(tut) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-<% end %>
-</div>
+
