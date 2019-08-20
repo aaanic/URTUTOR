@@ -18,7 +18,7 @@ class TutorialPolicy < ApplicationPolicy
   end
 
   def edit?
-    user_is_logged?
+    user_is_logged? || user.admin
   end
 
   def update?
@@ -26,7 +26,7 @@ class TutorialPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user_is_logged?
+    user_is_logged? || user.admin
   end
 
   private
