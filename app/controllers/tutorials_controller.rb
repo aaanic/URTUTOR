@@ -1,7 +1,9 @@
 class TutorialsController < ApplicationController
+  skip_after_action :verify_authorized, only: [:new, :show]
   before_action :find_tutorial, only: [:show, :edit, :update, :destroy]
+
   def index
-    @tutorials = Tutorial.all
+    @tutorials = policy_scope(Tutorial).order(created_at: :desc)
   end
 
   def show
@@ -13,6 +15,8 @@ class TutorialsController < ApplicationController
 
   def create
     @tutorial = Tutorial.new(tutorial_params)
+    @tutorial.user = current_user
+    authorize @tutorial
     if @tutorial.save
       redirect_to tutorial_path(@tutorial)
     else

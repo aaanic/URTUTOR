@@ -1,0 +1,18 @@
+.vertical-category-list {
+ display: flex;
+ flex-wrap: wrap;
+ margin-top: 30px;
+ margin-bottom: 30px;
+}
+
+.list-item-category {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  list-style: none;
+  padding: 19px 40px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #000;
+  letter-spacing: 0.2em;
+}

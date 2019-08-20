@@ -1,2 +1,10 @@
-<h1>Tutorials#show</h1>
-<p>Find me in app/views/tutorials/show.html.erb</p>
+<div class="container">
+<h1><%= @tutorial.title %></h1>
+<p><%= @tutorial.category %></p>
+<img src="<%= @tutorial.image_link %>">
+<p><%= @tutorial.description %></p>
+<li><%= link_to "Edit", edit_tutorial_path %></li>
+<li><%= link_to "Delete", method: :delete %></li>
+<li><%= link_to "Back to Tutorials", tutorials_path %></li>
+</div>
+
