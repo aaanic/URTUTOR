@@ -43,6 +43,7 @@ class TutorialsController < ApplicationController
 
   def find_tutorial
     @tutorial = Tutorial.find(params[:id])
+    authorize @tutorial
   end
 
   def tutorial_params
