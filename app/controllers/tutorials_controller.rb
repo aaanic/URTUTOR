@@ -37,6 +37,7 @@ class TutorialsController < ApplicationController
 
   def destroy
     @tutorial.destroy
+    redirect_to tutorials_path(@tutorial)
   end
 
   private
@@ -47,6 +48,6 @@ class TutorialsController < ApplicationController
   end
 
   def tutorial_params
-    params.require(:tutorial).permit(:title, :category, :description, :video_link)
+    params.require(:tutorial).permit(:title, :category, :description, :video_link, :image_link)
   end
 end

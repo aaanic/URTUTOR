@@ -1,15 +1,37 @@
 <div class="container">
-<h1><%= @tutorial.title %></h1>
-<p><%= @tutorial.category %></p>
-<img src="<%= @tutorial.image_link %>">
-<p><%= @tutorial.description %></p>
-<% if policy(@tutorial).edit? %>
-  <li> <%= link_to "Edit", edit_tutorial_path %>
-  <% end %>
-</li>
-<% if policy(@tutorial).destroy? %>
-<li> <%= link_to "Destroy", @tutorial, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-</li>
-<li><%= link_to "Back to Tutorials", tutorials_path %></li>
+  <div  class="header">
+    <div>
+      <p><%= @tutorial.category %></p>
+      <h1><%= @tutorial.title %></h1>
+    </div>
+    <div class="options-container center-top">
+      <div>
+        <% if policy(@tutorial).edit? %>
+        <p class="category btn-option"><%= link_to "Edit", edit_tutorial_path %>
+          <% end %>
+        </p>
+        <% if policy(@tutorial).destroy? %>
+        <p class="category btn-option"><%= link_to "Destroy", @tutorial, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tutorial-show-page-grid-container">
+    <div class="banner-container">
+      <div class="banner-image" style="background-image: url(<%= @tutorial.image_link %>);">
+      </div>
+    </div>
+
+    <div class="description-container ">
+      <div class="description-lead">Lorem ipsum dolor sit amet, consetetur sadipscing elit. Do we need this lead text?
+        <div class="description-text">
+          <%= @tutorial.description %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+      <p class="category btn-option"><%= link_to "Back to Tutorials", tutorials_path %></p>
