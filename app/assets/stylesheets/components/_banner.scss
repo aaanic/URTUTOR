@@ -6,10 +6,12 @@
   display: flex;
   align-items: flex-end;
   text-shadow: 0 10px 100px rgba(0,0,0,0.8);
+  h1 {
+    font-size: 4.5em;
+  }
 }
 
 .banner-container {
   margin-left: 20%;
   margin-bottom: 20%;
-
 }
