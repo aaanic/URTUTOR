@@ -1,2 +1,25 @@
-<h1>Tutorials#index</h1>
-<p>Find me in app/views/tutorials/index.html.erb</p>
+<div class="container">
+  <div class="index-grid-container">
+    <% @tutorials.each do |tut| %>
+      <div class="box">
+        <div class="card-container">
+          <div class="card">
+            <div class="card-left">
+              <div class="image" style="background-image: url(<%= tut.image_link %>)" ></div>
+            </div>
+            <div class="card-right">
+              <div class="card-title">
+                <h3><%= tut.title %></h3>
+              </div>
+            </div>
+            <div class="card-action center">
+              <%= link_to "View Tutorial", tutorial_path(tut) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
