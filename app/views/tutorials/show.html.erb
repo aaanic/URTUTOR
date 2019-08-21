@@ -33,3 +33,5 @@
 <div>
   <p class="category btn-option"><%= link_to "Back to Tutorials", tutorials_path %></p>
 </div>
+
+<%= link_to "Add to my tutorials", lessons_path(lesson: { user_id: current_user.id, tutorial_id: @tutorial.id }), method: :post %>

@@ -1,1 +1,14 @@
-<h1>User dashboard</h1>
+<h1>Hello <%= @user.first_name %></h1>
+
+<p>What you are learning:</p>
+
+
+<p>Your tutorials: </p>
+<% @user.tutorials.each do |t| %>
+<p><%= t %></p>
+<% end %>
+
+<p>Bought tutorials</p>
+<% @user.bought_tutorials.each do |b| %>
+<p><%= b %></p>
+<% end %>
