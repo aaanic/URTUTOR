@@ -35,4 +35,4 @@
   </div>
 </div>
 
-
+<%= link_to "Add to my tutorials", lessons_path(lesson: { user_id: current_user.id, tutorial_id: @tutorial.id }), method: :post %>
