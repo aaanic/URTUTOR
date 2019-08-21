@@ -1,21 +1,14 @@
-.tutorial-show-page-grid-container {
-  width: 90%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 1fr 350px auto;
-}
 
-
-.header {
-  display: flex;
+.content-header {
   justify-content: space-between;
-  grid-column-start: 1;
-  grid-column-end: 9;
+  margin-top: 30px;
+  display: flex;
+
 }
 
 h1.tutorial-header {
-    margin: 14px 0;
+    font-size: 3em;
+    margin: 2.5em 0;
 }
 
 a, a:hover {
@@ -41,12 +34,6 @@ a, a:hover {
   align-items: center;
 }
 
-
-.img-container {
-  grid-column: 3 / span 5;
-  grid-row: 2/3;
-}
-
 .banner-image {
   background-size: cover;
   background-position: center;
@@ -61,20 +48,18 @@ a, a:hover {
 /* Leadtext and Description */
 
 .description-container {
-  grid-column: 2/ span 6;
-  grid-row: 3;
+  margin-left: 10%;
 }
 
 .description-lead {
   margin-top: 75px;
   font-size: 35px;
-  grid-column: 1/3;
+
 }
 
 .description-text {
   margin-top: 75px;
   font-size: 24px;
-  grid-column: 5/8;
 }
 
 .center-align {
