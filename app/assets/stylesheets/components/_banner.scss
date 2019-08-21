@@ -1,5 +1,6 @@
 .banner {
-  height: 75vh;
+  margin: 0 5%;
+  height: 50vh;
   background-size: cover;
   background-repeat: none;
   color: #fff;
@@ -9,6 +10,10 @@
   h1 {
     font-size: 4.5em;
   }
+}
+
+#home-banner {
+  height: 75vh;
 }
 
 .banner-container {

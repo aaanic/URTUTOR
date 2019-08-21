@@ -1,14 +1,33 @@
-<h1>Hello <%= @user.first_name %></h1>
+<div class="cover-container">
+  <div class="cover-lef"></div>
+  <div class="cover-right"></div>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://source.unsplash.com/user/erondu/UvbKivMXehM)">
+    <div class="banner-container">
+    <h1>Hello <%= @user.first_name %></h1>
+  </div>
+</div>
+</div>
 
-<p>What you are learning:</p>
+<div class="user-container">
 
-
-<p>Your tutorials: </p>
-<% @user.tutorials.each do |t| %>
-<p><%= t %></p>
+<h2>You're the student:</h2>
+<% @user.bought_tutorials.each do |b| %>
+<div class="student-card">
+<img src="<%= b.image_link %>" alt="" class="stu-card-img">
+<div class="stu-card-text">
+<h3><%= b.title %></h3>
+<%= link_to "Go to tutorial", tutorial_path(b) %>
+</div>
+</div>
 <% end %>
 
-<p>Bought tutorials</p>
-<% @user.bought_tutorials.each do |b| %>
-<p><%= b %></p>
+<h2>You're the teacher:</h2>
+<% @user.tutorials.each do |t| %>
+<div class="student-card">
+  <img src="<%= t.image_link %>" alt="" class="stu-card-img">
+  <div class="stu-card-text">
+<h3><%= t.title %></h3>
+<%= link_to "Go to tutorial", tutorial_path(t) %>
+</div>
+</div>
 <% end %>
