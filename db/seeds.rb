@@ -6,38 +6,78 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database"
+User.destroy_all
+users_stuff = [
+{
+  username:       "emmagreen",
+  first_name:     "emma",
+  last_name:      "green",
+  email:          "emma@green.com",
+  password:       "iamgreen"
+},
+{
+  username:       "emmablack",
+  first_name:     "emma",
+  last_name:      "black",
+  email:          "emma@black.com",
+  password:       "iamblack"
+},
+{
+  username:       "emmapurple",
+  first_name:     "emma",
+  last_name:      "purple",
+  email:          "emma@purple.com",
+  password:       "iampurple"
+},
+]
+User.create!(users_stuff)
+puts "added #{User.count} users"
 Tutorial.destroy_all
 
 puts "Adding seed data"
 
 tutorial_attributes = [
-  { title:          "Learn to knit",
+  { title:          "Living Off Grid",
     user_id:        1,
-    description:    "Knitting is super important.",
-    category:       "arts & crafts",
-    image_link:     "https://i.ytimg.com/vi/4XXky5Mo5p8/maxresdefault.jpg",
-    video_link:     "https://www.youtube.com/watch?v=Tff3ng-djtk"
+    description:    "Living free and self-sufficient.  No electrical bills and a greener way of life for the family.",
+    category:       "diy",
+    image_link:     "https://i.ytimg.com/vi/I9jRYHpeAk0/maxresdefault.jpg",
+    video_link:     "https://www.youtube.com/watch?v=I9jRYHpeAk0"
 },
-  { title:          "Blowing bubbles with chewing gum",
+  { title:          "Blowing The Biggest Bubbles",
     user_id:        1,
-    description:    "Be super annoying in meetings.",
-    category:       "random",
-    video_link:     "https://www.youtube.com/watch?v=H0eqzzcvisw",
-    image_link:     "https://www.zwembadbranche.nl/wp-content/uploads/2018/01/kauwgom.png"
+    description:    "Impress your family, friends and the whole neighbourhood.  Blow insane bubbles that will definetly make you the most popular person in town.",
+    category:       "bubbles",
+    video_link:     "https://www.youtube.com/watch?v=98pa2pxhoGk",
+    image_link:     "http://www.waynesthisandthat.com/images/gbheader.jpg"
 },
-  { title:          "Make-up like Valentina",
+  { title:          "Make-Up Like Valentina",
     user_id:        1,
     description:    "Want to look like Valetina for one night? Here's how!",
     category:       "make-up",
-    video_link:     "https://www.youtube.com/watch?v=S-xcjHS3wec",
-    image_link:     "https://www.sbs.com.au/topics/sites/sbs.com.au.topics/files/styles/full/public/gettyimages-1079392704.jpg?itok=xLW9wuPX&mtime=1547505637"
+    video_link:     "https://www.youtube.com/watch?v=cqpXL78yRqc",
+    image_link:     "https://i.ytimg.com/vi/SZLq7rldTtk/maxresdefault.jpg"
 },
-  { title:          "How to roll sushi",
+  { title:          "Hack Google",
     user_id:        1,
-    description:    "Like a real sushi master, you'll create sushi for your guests.",
-    category:       "cooking",
+    description:    "Some weekends are for visiting family, some weekends are for relaxing but there always needs to be one weekened where you learn to hack google. VPN not included.",
+    category:       "hacking",
     video_link:     "https://www.youtube.com/watch?v=yGG01tj9wi4",
-    image_link:     "https://i.pinimg.com/originals/c7/92/db/c792db3788e4ed7cd14355ccbc4cb469.jpg"
+    image_link:     "https://1.bp.blogspot.com/-pCx12skpKwg/Vu0Ih209eGI/AAAAAAAABTM/amX4hbK5PEcOriRdT855KjiENovxZGm8g/s728-e100/hacking-google-chromebook.png"
+},
+  { title:          "Sew On A Button",
+    user_id:        3,
+    description:    "If you have ever owned a button-up shirt you will have at one stage lost a button.  We are here to teach you how to sew that badboy back on your shirt.",
+    category:       "sewing",
+    video_link:     "https://www.youtube.com/watch?v=zca_gc-Qw7w",
+    image_link:     "https://i1.wp.com/blog.treasurie.com/wp-content/uploads/2017/05/how-to-sew-a-button-1.jpg?resize=1024%2C683&ssl=1"
+},
+  { title:          "Train Your Dragon",
+    user_id:        3,
+    description:    "Have you just finished season 6 of 'Game Of Thrones' and have recently found a dragon that was looking for a new leader.",
+    category:       "dragon",
+    video_link:     "https://www.youtube.com/watch?v=SkcucKDrbOI",
+    image_link:     "https://imgix.bustle.com/uploads/image/2019/4/18/c2b5ada0-0925-4f15-822b-b414ed79e605-2de0908eaeb8a27478391f59fa8bd90479aba9a197a808b83ef8b866e067c682320b964566e31ff7378a22a84ca579af.jpg?w=960&h=540&fit=crop&crop=faces&auto=format&q=70&dpr=2"
 }]
 
 Tutorial.create!(tutorial_attributes)
