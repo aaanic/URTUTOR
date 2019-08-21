@@ -4,4 +4,8 @@ class PagesController < ApplicationController
     @tutorials = Tutorial.all
     @categories = Tutorial.select(:category).map(&:category).uniq
   end
+
+  def user_dashboard
+
+  end
 end
