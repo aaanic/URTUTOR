@@ -1,8 +1,8 @@
 <div class="tutorial-show-page-grid-container ">
   <div  class="header">
     <div class="center-align">
-      <span class="category-tag"><%= @tutorial.category %></span>
-      <h1><%= @tutorial.title %></h1>
+      <span class="category-tag"><%= @tutorial.category.name %></span>
+      <h1 class="tutorial-header"><%= @tutorial.title %></h1>
     </div>
     <div class="options-container center-top">
       <div>
@@ -17,19 +17,24 @@
       </div>
     </div>
   </div>
+
   <div class="img-container">
-    <div class="banner-image" style="background-image: url(<%= @tutorial.image_link %>);">
-    </div>
+    <%= link_to @tutorial.video_link do  %>
+      <div class="banner-image" style="background-image: url(<%= @tutorial.image_link %>);">
+      </div>
+    <% end %>
   </div>
 
   <div class="description-container ">
+    <div>
+      <%= link_to "Back to Tutorials", tutorials_path, class: "btn-go-back" %>
+    </div>
     <div class="description-lead">Lorem ipsum dolor sit amet, consetetur sadipscing elit. Do we need this lead text?
-      <div class="description-text">
-        <%= @tutorial.description %>
-      </div>
     </div>
   </div>
+  <div class="description-text">
+    <%= @tutorial.description %>
+  </div>
 </div>
-<div>
-  <p class="category btn-option"><%= link_to "Back to Tutorials", tutorials_path %></p>
-</div>
+
+

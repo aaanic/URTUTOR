@@ -3,7 +3,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 1fr 2fr auto;
+  grid-template-rows: 1fr 350px auto;
 }
 
 
@@ -12,6 +12,10 @@
   justify-content: space-between;
   grid-column-start: 1;
   grid-column-end: 9;
+}
+
+h1.tutorial-header {
+    margin: 14px 0;
 }
 
 a, a:hover {
@@ -64,7 +68,7 @@ a, a:hover {
 .description-text {
   margin-top: 75px;
   font-size: 24px;
-  grid-column: 3/4;
+  grid-column: 5/8;
 }
 
 .center-align {
@@ -83,16 +87,4 @@ a, a:hover {
   text-align: center;
 }
 
-.btn-option {
-  margin-top: 10px;
-  background-color: #fff;
-}
-
-
-/* Go back arrow */
-
-.go-back-arrow {
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-}
 
