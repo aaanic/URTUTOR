@@ -38,6 +38,7 @@ a, a:hover {
 .center-top {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 
@@ -50,6 +51,11 @@ a, a:hover {
   background-size: cover;
   background-position: center;
   height: 100%;
+}
+
+.options-inner-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* Leadtext and Description */

@@ -5,7 +5,7 @@
       <h1 class="tutorial-header"><%= @tutorial.title %></h1>
     </div>
     <div class="options-container center-top">
-      <div>
+      <div class="options-inner-container">
         <% if policy(@tutorial).edit? %>
         <p class="category btn-option"><%= link_to "Edit", edit_tutorial_path %>
           <% end %>
@@ -29,11 +29,9 @@
     <div>
       <%= link_to "Back to Tutorials", tutorials_path, class: "btn-go-back" %>
     </div>
-    <div class="description-lead">Lorem ipsum dolor sit amet, consetetur sadipscing elit. Do we need this lead text?
-    </div>
-  </div>
   <div class="description-text">
     <%= @tutorial.description %>
+  </div>
   </div>
 </div>
 
