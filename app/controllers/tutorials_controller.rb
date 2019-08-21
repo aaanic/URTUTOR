@@ -11,6 +11,7 @@ class TutorialsController < ApplicationController
 
   def new
     @tutorial = Tutorial.new
+    @categories = Category.all
   end
 
   def create
