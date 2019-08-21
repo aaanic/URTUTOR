@@ -1,7 +1,7 @@
 <%= simple_form_for @tutorial do |f| %>
   <div class="form-group">
     <%= f.input :title, class: "form-control" %>
-    <small id="emailHelp" class="form-text text-muted">The name of this will be seen by everyone</small>
+    <small id="emailHelp" class="form-text text-muted">This title will be seen by everyone</small>
   </div>
   <div class="form-group">
     <%= f.input :category, class: "form-control" %>
@@ -15,6 +15,7 @@
   <div class="form-group">
     <%= f.input :video_link %>
   </div>
+  <br>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
 
