@@ -4,3 +4,11 @@
   color: white;
   text-transform: uppercase;
 }
+
+a.btn-go-back {
+  text-transform: uppercase;
+  grid-column: 3 / span 4;
+  grid-row: 2/4;
+  margin-top: 20px;
+}
+
