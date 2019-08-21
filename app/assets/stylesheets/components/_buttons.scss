@@ -5,13 +5,24 @@
   text-transform: uppercase;
 }
 
-a.btn-go-back {
+a.btn-uppercase {
   text-transform: uppercase;
   grid-column: 3 / span 4;
   grid-row: 2/4;
-  margin-top: 20px;
+  margin-top: 200px;
+  font-size: 14px;
 }
 
 .white-text:hover {
   color: black;
+}
+
+.btn-option {
+  padding: 15px 30px;
+  width: 150px;
+  text-transform: uppercase;
+  text-align: center;
+  background: white;
+  margin-left: 10px;
+  font-size: 14px;
 }

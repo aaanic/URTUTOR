@@ -3,15 +3,18 @@
     <div class="center-align">
       <span class="category-tag"><%= @tutorial.category.name %></span>
       <h1 class="tutorial-header"><%= @tutorial.title %></h1>
+      <div>
+        <%= link_to "↤ Back to Tutorials", tutorials_path, class: "btn-uppercase" %>
+      </div>
     </div>
-    <div class="options-container center-top">
+    <div class="options-container center-align">
       <div class="options-inner-container">
         <% if policy(@tutorial).edit? %>
-        <p class="category btn-option"><%= link_to "Edit", edit_tutorial_path %>
+        <p class="btn-option"><%= link_to "Edit", edit_tutorial_path %>
           <% end %>
         </p>
         <% if policy(@tutorial).destroy? %>
-        <p class="category btn-option"><%= link_to "Destroy", @tutorial, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <p class="btn-option"><%= link_to "Destroy", @tutorial, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </p>
       </div>
@@ -20,19 +23,20 @@
 
   <div class="img-container">
     <%= link_to @tutorial.video_link do  %>
-      <div class="banner-image" style="background-image: url(<%= @tutorial.image_link %>);">
-      </div>
+    <div class="banner-image" style="background-image: url(<%= @tutorial.image_link %>);">
+    </div>
+    <div>
+      <%= link_to "+ Add to my tutorials", lessons_path(lesson: { user_id: current_user.id, tutorial_id: @tutorial.id }), method: :post, class: "btn-uppercase" %>
+    </div>
     <% end %>
   </div>
 
   <div class="description-container ">
-    <div>
-      <%= link_to "Back to Tutorials", tutorials_path, class: "btn-go-back" %>
+
+    <div class="description-text">
+      <%= @tutorial.description %>
     </div>
-  <div class="description-text">
-    <%= @tutorial.description %>
   </div>
-  </div>
+
 </div>
 
-<%= link_to "Add to my tutorials", lessons_path(lesson: { user_id: current_user.id, tutorial_id: @tutorial.id }), method: :post %>
