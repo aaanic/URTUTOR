@@ -18,6 +18,7 @@
     <div class="stu-card-text">
       <h3><%= b.title %></h3>
       <%= link_to "Go to tutorial", tutorial_path(b) %>
+      <p id="view-font"><%= b.lessons.count %> views</p>
     </div>
   </div>
   <% end %>
@@ -29,6 +30,7 @@
     <div class="stu-card-text">
       <h3><%= t.title %></h3>
       <%= link_to "Go to tutorial", tutorial_path(t) %>
+      <p id="view-font"><%= t.lessons.count %> views</p>
     </div>
   </div>
   <% end %>
