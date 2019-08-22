@@ -4,16 +4,13 @@
 <div class="container">
   <h1>Tutorials</h1>
   <div class="filter-container">
-    <div class="filter-by">Filter by: </div>
-    <%#= simple_form_for(Tutorial.new) do |f| %>
-      <%#= f.association :category %>
-    <%# end %>
-    <%= select_tag 'Category', options_for_select(@categories.collect{ |u| u.name })  %>
+    <div class="filter-by">Category: </div>
+    <%= select_tag 'Category', options_for_select(@categories.collect{ |u| u.name }), class: "select-css"  %>
     <div class="reset-filter">RESET</div>
   </div>
 
 <br>
-  
+
   <div class="index-grid-container">
     <% @tutorials.each do |tut| %>
     <div class="box">
@@ -42,8 +39,10 @@
     <% end %>
   </div>
 </div>
-  
+
 <script>
+
+
   const select = document.querySelector('select')
   const cards = [];
 
