@@ -7,7 +7,7 @@
 
 .play .reaction { display: none; }
 .play:hover {
-    letter-spacing: 5px;
+  letter-spacing: 5px;
 }
 .play:hover .action { display: none; }
 .play:hover .reaction {display: inline; }
@@ -38,20 +38,21 @@ a.btn-go-back {
 }
 
 .btn-red-outline {
-  background: white;
-  padding: 20px;
+  background: $red;
+  border: $red;
   text-transform: uppercase;
+  padding: 20px;
+  color: #fff;
   border: solid 1px $red;
   a {
-    color: $red;
+    color: #fff;
   }
   &:hover {
-    background: $red;
-    border: $red;
-    color: #fff;
+    background: white;
     border: solid 1px $red;
     a {
-      color: #fff;
+      color: $red;
     }
   }
 }
+

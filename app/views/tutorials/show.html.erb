@@ -58,8 +58,9 @@
           </button>
         </div>
         <% if current_user.bought_tutorials.include?(@tutorial) %>
+        <% lesson = current_user.lessons.find_by(tutorial: @tutorial) %>
         <div>
-          <button class= "btn-red-outline" ><%= link_to "Remove tutorial", lessons_path(lesson: { user_id: current_user.id, tutorial_id: @tutorial.id }), method: :post %></button>
+          <button class= "btn-red-outline" ><%= link_to "Remove tutorial", lesson_path(lesson), method: :delete, data: { confirm: 'Are you sure?' } %></button>
         </div>
         <% else %>
         <div>
