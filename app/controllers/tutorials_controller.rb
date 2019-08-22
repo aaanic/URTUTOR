@@ -5,7 +5,6 @@ class TutorialsController < ApplicationController
   before_action :find_tutorial, only: [:show, :edit, :update, :destroy]
 
   def index
-
     user_input = params[:query]
     if user_input
       tutorials = Tutorial.global_tutorial_search(user_input)
