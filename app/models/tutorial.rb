@@ -1,7 +1,7 @@
 class Tutorial < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  has_many :lessons
+  has_many :lessons, dependent: :destroy
 
   validates :image_link, presence: true
   validates :video_link, presence: true
