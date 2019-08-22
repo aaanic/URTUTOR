@@ -1,6 +1,10 @@
+.nav-padding {
+  padding-top: 80px;
+}
+
 .banner {
   margin: 0 5%;
-  height: 50vh;
+  height: 75vh;
   background-size: cover;
   background-repeat: none;
   color: #fff;
@@ -12,9 +16,9 @@
   }
 }
 
-#home-banner {
-  height: 75vh;
-}
+// #home-banner {
+//   height: 75vh;
+// }
 
 .banner-container {
   margin-left: 20%;

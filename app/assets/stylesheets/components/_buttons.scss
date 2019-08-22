@@ -5,15 +5,19 @@
   text-transform: uppercase;
 }
 
+.play .reaction { display: none; }
+.play:hover {
+  letter-spacing: 5px;
+}
+.play:hover .action { display: none; }
+.play:hover .reaction {display: inline; }
+
+
 a.btn-go-back {
   text-transform: uppercase;
   margin-top: 20px;
   position: absolute;
   bottom: 5%;
-}
-
-.white-text:hover {
-  color: black;
 }
 
 .btn-black-outline {
@@ -22,4 +26,33 @@ a.btn-go-back {
   color: black;
   text-transform: uppercase;
   border: solid 1px black;
+  &:hover {
+    background: $red;
+    border: $red;
+    color: #fff;
+    border: solid 1px $red;
+    a {
+      color: #fff;
+    }
+  }
 }
+
+.btn-red-outline {
+  background: $red;
+  border: $red;
+  text-transform: uppercase;
+  padding: 20px;
+  color: #fff;
+  border: solid 1px $red;
+  a {
+    color: #fff;
+  }
+  &:hover {
+    background: white;
+    border: solid 1px $red;
+    a {
+      color: $red;
+    }
+  }
+}
+
