@@ -52,14 +52,23 @@
       </div>
       <div class="tutorial-options">
         <div>
-          <button class="btn-black js-trigger-video-modal basic-open-video"
-            alt="Play Video">Watch now</button>
+          <button class="btn-black play js-trigger-video-modal basic-open-video"
+            alt="Play Video">
+            <span class="action">Watch now</span>
+            <span class="reaction">Play ►</i></span>
+        </button>
         </div>
-
+               <% if current_user.bought_tutorials.include?(@tutorial) %>
+        <% lesson = current_user.lessons.find_by(tutorial: @tutorial) %>
         <div>
-          <button class= "btn-black-outline" ><%= link_to "Add tutorial", lessons_path(lesson: { user_id: current_user.id, tutorial_id: @tutorial.id }), method: :post %>
-          </button>
-       </div>
+          <button class= "btn-red-outline" ><%= link_to "Remove tutorial", lesson_path(lesson), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        </div>
+        <% else %>
+        <div>
+          <button class= "btn-black-outline" ><%= link_to "Add tutorial", lessons_path(lesson: { user_id: current_user.id, tutorial_id: @tutorial.id }), method: :post %></button>
+        </div>
+        <% end %>
+
       </div>
 
     </div>
