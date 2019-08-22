@@ -1,0 +1,22 @@
+.filter-container {
+  width: 260px;
+  height: 40px;
+  margin: 15px 30px 0 0;
+  padding: 10px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: space-around;
+
+  .filter-by {
+    font-size: 12px;
+    padding-right: 10px;
+  }
+  .reset-filter {
+    cursor: pointer;
+    &:hover {
+      font-size: bold;
+    }
+  }
+}
+
+
