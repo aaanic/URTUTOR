@@ -1,0 +1,21 @@
+.student-card {
+  display: flex;
+  margin: 4em auto;
+  width: 100%;
+}
+
+.stu-card-img {
+  width: 50%;
+}
+
+.stu-card-text {
+  height: 150px;
+  background-color: #fff;
+  width: 40%;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  top: 30px;
+  left: -60px;
+}
