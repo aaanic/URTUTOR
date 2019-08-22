@@ -4,6 +4,7 @@ class TutorialsController < ApplicationController
 
   def index
     @tutorials = policy_scope(Tutorial).order(created_at: :desc)
+    @categories = Category.all
   end
 
   def show
