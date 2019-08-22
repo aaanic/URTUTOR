@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :tutorials
   resources :lessons, only: [:new, :create]
   get '/dashboard', to: 'pages#user_dashboard'
+  get '/testing', to: 'pages#testing'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
