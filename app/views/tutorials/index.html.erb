@@ -1,33 +1,34 @@
 <main>
 
-
-<div class="container">
-  <h1>Tutorials</h1>
-  <div class="index-grid-container">
-    <% @tutorials.each do |tut| %>
-    <div class="box">
-      <div class="card-container">
-        <%= link_to tutorial_path(tut) do %>
-          <div class="card">
-            <div class="card-left">
-              <div class="image" style="background-image: url(<%= tut.image_link %>)" ></div>
-            </div>
-            <div class="card-right">
-              <div class="card-text">
-                  <span class="category-tag"><%= tut.category.name.capitalize %></span>
-                <h4><%= tut.title %></h4>
+<div class="padding-top">
+  <div class="container">
+    <h1>Tutorials</h1>
+    <div class="index-grid-container">
+      <% @tutorials.each do |tut| %>
+      <div class="box">
+        <div class="card-container">
+          <%= link_to tutorial_path(tut) do %>
+            <div class="card">
+              <div class="card-left">
+                <div class="image" style="background-image: url(<%= tut.image_link %>)" ></div>
+              </div>
+              <div class="card-right">
+                <div class="card-text">
+                    <span class="category-tag"><%= tut.category.name.capitalize %></span>
+                  <h4><%= tut.title %></h4>
+                </div>
+              </div>
+              <div class="card-action center btn-black">
+                <div class="white-text">
+                  Go to tutorial
+                </div>
               </div>
             </div>
-            <div class="card-action center btn-black">
-              <div class="white-text">
-                Go to tutorial
-              </div>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 
