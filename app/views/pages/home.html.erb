@@ -18,11 +18,33 @@
 
     <div class="teaser-cards">
       <h3>Popular classes:</h3>
-      <ul>
-        <% @tutorials.each do |t| %>
-        <li><%= t.title %></li>
+      <div class="index-grid-container">
+        <% @tutorials.each do |tut| %>
+        <div class="box">
+          <div class="card-container">
+            <%= link_to tutorial_path(tut) do %>
+            <div class="card">
+              <div class="card-left">
+                <div class="image" style="background-image: url(<%= tut.image_link %>)" ></div>
+              </div>
+              <div class="card-right">
+                <div class="card-text">
+                  <span class="category-tag"><%= tut.category.name.capitalize %></span>
+                  <p style="display: none;" class="category"><%= tut.category.name %></p>
+                  <h4><%= tut.title %></h4>
+                </div>
+              </div>
+              <div class="card-action center btn-black">
+                <div class="white-text">
+                  Go to tutorial
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
 </div>
