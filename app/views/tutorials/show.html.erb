@@ -52,7 +52,10 @@
       </div>
       <div class="tutorial-options">
         <div>
-          <button class="btn-black">Watch now</button>
+          <button class="btn-black play">
+            <span class="action">Watch now</span>
+            <span class="reaction">Play ►</i></span>
+          </button>
         </div>
         <div>
           <button class= "btn-black-outline" ><%= link_to "Add tutorial", lessons_path(lesson: { user_id: current_user.id, tutorial_id: @tutorial.id }), method: :post %></button>
