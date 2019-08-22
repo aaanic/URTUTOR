@@ -37,3 +37,21 @@ a.btn-go-back {
   }
 }
 
+.btn-red-outline {
+  background: white;
+  padding: 20px;
+  text-transform: uppercase;
+  border: solid 1px $red;
+  a {
+    color: $red;
+  }
+  &:hover {
+    background: $red;
+    border: $red;
+    color: #fff;
+    border: solid 1px $red;
+    a {
+      color: #fff;
+    }
+  }
+}
