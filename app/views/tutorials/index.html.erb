@@ -3,6 +3,17 @@
 
 <div class="container">
   <h1>Tutorials</h1>
+  <div class="filter-container">
+    <div class="filter-by">Filter by: </div>
+    <%#= simple_form_for(Tutorial.new) do |f| %>
+      <%#= f.association :category %>
+    <%# end %>
+    <%= select_tag 'Category', options_for_select(@categories.collect{ |u| u.name })  %>
+    <div class="reset-filter">RESET</div>
+  </div>
+
+<br>
+  
   <div class="index-grid-container">
     <% @tutorials.each do |tut| %>
     <div class="box">
@@ -15,6 +26,7 @@
             <div class="card-right">
               <div class="card-text">
                   <span class="category-tag"><%= tut.category.name.capitalize %></span>
+                  <p style="display: none;" class="category"><%= tut.category.name %></p>
                 <h4><%= tut.title %></h4>
               </div>
             </div>
@@ -30,5 +42,49 @@
     <% end %>
   </div>
 </div>
+  
+<script>
+  const select = document.querySelector('select')
+  const cards = [];
 
-</main>
+  const generateCards = () => {
+    const rawCards = document.querySelectorAll('.box');
+    rawCards.forEach((card) => {
+      const some = new Object;
+      some.html = card;
+      some.category = card.querySelector('.category').innerText;
+      cards.push(some);
+    })
+  };
+
+  const filterCards = (filter) => {
+    cards.forEach((card) => {
+      console.log(`the filter: ${filter}, category: ${card.category}`)
+      console.log(card.category == filter)
+      if (card.category == filter) {
+        card.html.style.display = 'block';
+        card.html.hidden = false;
+      } else {
+        card.html.style.display = 'none';
+        card.html.hidden = true;
+      }
+    })
+  };
+
+  const getBackAllCards = () => {
+    cards.forEach((card) => {
+      card.html.hidden = false;
+      card.html.style.display = 'block';
+    })
+  };
+
+  generateCards();
+  select.onchange = function(){
+    getBackAllCards();
+    const fuckYes = select.selectedOptions[0].innerText;
+    filterCards(fuckYes);
+  };
+
+  const resetFilter = document.querySelector('.reset-filter')
+  resetFilter.addEventListener('click', getBackAllCards)
+</script>
