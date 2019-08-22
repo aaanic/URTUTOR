@@ -1,0 +1,44 @@
+<div class="video-modal2">
+  <div id="inside-modal">
+    <div id="ytplayer"></div>
+  </div>
+</div>
+
+
+<script>
+  const video_id = "<%= @tutorial.video_id %>";
+  var w = window.innerWidth * 0.9;
+  var h = window.innerHeight * 0.75;
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: h.toString(),
+      width: w.toString(),
+      videoId: video_id
+    });
+  }
+
+  const videoButtons = document.querySelectorAll(".basic-open-video");
+  const outsideModal = document.querySelector(".video-modal2");
+
+  outsideModal.addEventListener("click", (event) => {
+    player.stopVideo();
+    outsideModal.style.display = "none";
+  })
+
+  videoButtons.forEach((videoButton) => {
+    videoButton.addEventListener("click", (event) => {
+      outsideModal.style.display = "flex";
+    })
+  })
+
+  console.log(video_id);
+</script>

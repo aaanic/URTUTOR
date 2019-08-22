@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database"
+Tutorial.destroy_all
 User.destroy_all
 users_stuff = [
 {
@@ -59,7 +60,6 @@ categories_stuff = [
 Category.create!(categories_stuff)
 print " and #{Category.count} categories"
 
-Tutorial.destroy_all
 
 tutorial_attributes = [
   { title:          "Living Off Grid",
@@ -107,6 +107,12 @@ tutorial_attributes = [
 
 Tutorial.create!(tutorial_attributes)
 print " and #{Tutorial.count} tutorials"
+
+Tutorial.all.each do |t|
+  t.video_id = t.video_link.split("=")[1]
+  t.save
+end
+
 
 puts ""
 puts "Have a wonderful time! Good Luck!"
