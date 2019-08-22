@@ -2,9 +2,9 @@ class TutorialPolicy < ApplicationPolicy
   class Scope < Scope
   end
 
-  # def new?
-  #   true
-  # end
+  def index?
+    true
+  end
 
   def show?
     true
