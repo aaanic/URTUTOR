@@ -3,7 +3,14 @@ class TutorialsController < ApplicationController
   before_action :find_tutorial, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tutorials = policy_scope(Tutorial).order(created_at: :desc)
+
+    user_input = params[:query]
+    if user_input
+      tutorials = Tutorial.global_tutorial_search(user_input)
+    else
+      tutorials = Tutorial.all
+    end
+    @tutorials = policy_scope(tutorials).order(created_at: :desc)
     @categories = Category.all
   end
 
