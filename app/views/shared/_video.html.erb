@@ -4,29 +4,6 @@
   </div>
 </div>
 
-<!-- added style temporarily here -->
-
-<style>
-  .video-modal2 {
-    display: none;
-    top: 0;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 1040;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.6);
-  }
-
-  .inside-modal {
-    width: 80%;
-    height: 60%;
-  }
-</style>
-
-<!-- style ends here
- -->
 
 <script>
   const video_id = "<%= @tutorial.video_id %>";
@@ -53,6 +30,7 @@
   const outsideModal = document.querySelector(".video-modal2");
 
   outsideModal.addEventListener("click", (event) => {
+    player.stopVideo();
     outsideModal.style.display = "none";
   })
 
