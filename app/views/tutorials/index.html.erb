@@ -1,5 +1,8 @@
-<div class="container">
+<main>
 
+
+<div class="container">
+  <h1>Tutorials</h1>
   <div class="filter-container">
     <div class="filter-by">Filter by: </div>
     <%#= simple_form_for(Tutorial.new) do |f| %>
@@ -10,6 +13,7 @@
   </div>
 
 <br>
+  
   <div class="index-grid-container">
     <% @tutorials.each do |tut| %>
     <div class="box">
@@ -38,7 +42,7 @@
     <% end %>
   </div>
 </div>
-
+  
 <script>
   const select = document.querySelector('select')
   const cards = [];

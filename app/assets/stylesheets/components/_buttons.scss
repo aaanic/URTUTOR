@@ -7,11 +7,19 @@
 
 a.btn-go-back {
   text-transform: uppercase;
-  grid-column: 3 / span 4;
-  grid-row: 2/4;
   margin-top: 20px;
+  position: absolute;
+  bottom: 5%;
 }
 
 .white-text:hover {
-  color: white;
+  color: black;
+}
+
+.btn-black-outline {
+  background: white;
+  padding: 20px;
+  color: black;
+  text-transform: uppercase;
+  border: solid 1px black;
 }

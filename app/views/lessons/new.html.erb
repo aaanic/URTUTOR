@@ -1,0 +1,7 @@
+<h1>Do you want to buy this tutorial?</h1>
+
+<%= simple_form_for @lesson do |f| %>
+<%= f.submit %>
+<% end %>
+
+<%= link_to "Cancel", :back, {:class=>"btn btn-black"} %>
