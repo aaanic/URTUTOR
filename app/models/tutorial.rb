@@ -3,6 +3,9 @@ class Tutorial < ApplicationRecord
   belongs_to :user
   has_many :lessons
 
+  validates :image_link, presence: true
+  validates :video_link, presence: true
+
   include PgSearch::Model
   pg_search_scope :global_tutorial_search,
     against: [ :title, :description ],
