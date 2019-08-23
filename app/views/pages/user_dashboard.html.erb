@@ -20,7 +20,7 @@
         <h3><%= b.title %></h3>
         <div class="stu-card-details">
            <p id="view-font"><%= pluralize b.lessons.size, "view" %></p>
-        <%= link_to "Go to tutorial ⟶", tutorial_path(b) %>
+        <%= link_to "Go to tutorial ⟶", tutorial_path(b), class: "btn-go-fwd" %>
 
         </div>
       </div>
@@ -37,7 +37,7 @@
         <h3><%= t.title %></h3>
         <div class="stu-card-details">
            <p id="view-font"><%= pluralize t.lessons.count, "view" %></p>
-        <%= link_to "Go to tutorial ⟶", tutorial_path(t) %>
+        <%= link_to "Go to tutorial ⟶", tutorial_path(t), class: "btn-go-fwd"%>
 
         </div>
       </div>
