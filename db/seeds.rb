@@ -155,7 +155,7 @@ tutorial_attributes = [
     video_link:     "https://www.youtube.com/watch?v=MjVgIXccYXA",
     image_link:     "https://source.unsplash.com/l9Ugo0XcGWw"
 },
-  { title:          "You're herb garden",
+  { title:          "Your herb garden",
     user_id:        3,
     description:    " Today I'm showing you a super easy DIY Herb Garden that hangs on a rail! It's a great DIY project if you're trying to decorate your patio or outdoor living space.",
     category_id:    8,
