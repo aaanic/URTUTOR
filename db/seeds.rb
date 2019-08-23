@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database"
+Tutorial.destroy_all
 User.destroy_all
 Category.destroy_all
-Tutorial.destroy_all
 Lesson.destroy_all
+
 users_stuff = [
 {
   username:       "emmagreen",
@@ -121,7 +122,7 @@ tutorial_attributes = [
   { title:          "Your urban jungle",
     user_id:        3,
     description:    " A friend of mine inspired me to make this video so I can help him out and others like you out there who want to bring house plants into their lives but you're just not sure which plants to start with.",
-    category_id:    8,
+    category_id:    7,
     video_link:     "https://www.youtube.com/watch?v=FaAU_Hxg6tU",
     image_link:     "https://source.unsplash.com/m5dVK7tKOwE"
 },
@@ -142,21 +143,21 @@ tutorial_attributes = [
   { title:          "Latte Art",
     user_id:        1,
     description:    "How to make the perfect cappuccino. Definitely better than Star Bucks!",
-    category_id:    9,
+    category_id:    8,
     video_link:     "https://www.youtube.com/watch?v=B1yJuGQOUaY",
     image_link:     "https://source.unsplash.com/z3em1GBRhvY"
 },
   { title:          "The perfect macron",
     user_id:        2,
     description:    "How to make the perfect cappuccino. Definitely better than Star Bucks!",
-    category_id:    9,
+    category_id:    8,
     video_link:     "https://www.youtube.com/watch?v=MjVgIXccYXA",
     image_link:     "https://source.unsplash.com/l9Ugo0XcGWw"
 },
   { title:          "Your herb garden",
     user_id:        3,
     description:    " Today I'm showing you a super easy DIY Herb Garden that hangs on a rail! It's a great DIY project if you're trying to decorate your patio or outdoor living space.",
-    category_id:    8,
+    category_id:    7,
     video_link:     "https://www.youtube.com/watch?v=Ict29d8GeXE",
     image_link:     "https://source.unsplash.com/6hDDnisCRMk"
 }]
