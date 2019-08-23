@@ -47,6 +47,8 @@
       grid-column: 2 / 3;
       display: flex;
       align-items: center;
+
+
     }
     .card-title {
       font-size: 30px;
@@ -73,12 +75,41 @@
       transform: translateY(0);
     }
     .category-tag {
-        position: absolute;
-  top: 20px;
+      position: absolute;
+      top: 20px;
     }
   }
 }
 
 #view-font {
   font-size: 0.7em;
+}
+.like-box {
+  position: absolute;
+  z-index: 10;
+  top: 5px;
+  right: 5px;
+
+  .fa-heart {
+    opacity: 0.1;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #a4a4a4;
+    font-size: 30px;
+    animation: opacity 700ms ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      color: pink;
+      -webkit-text-stroke-color: transparent;
+    }
+  }
+}
+
+.liked-icon {
+  opacity: 1 !important;
+  color: pink !important;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: transparent !important;
+  font-size: 40px;
 }
