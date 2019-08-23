@@ -18,7 +18,17 @@ a.btn-go-back {
   margin-top: 20px;
   position: absolute;
   bottom: 5%;
+  &:hover{
+    font-style: italic;
+  }
 }
+
+a.btn-go-fwd {
+  &:hover{
+    font-style: italic;
+  }
+}
+
 
 .btn-black-outline {
   background: white;
