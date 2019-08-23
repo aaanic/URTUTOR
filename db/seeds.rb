@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database"
-Tutorial.destroy_all
 User.destroy_all
+Category.destroy_all
+Tutorial.destroy_all
+Lesson.destroy_all
 users_stuff = [
 {
   username:       "emmagreen",
@@ -36,7 +38,6 @@ print "added #{User.count} users"
 
 
 
-Category.destroy_all
 categories_stuff = [
 {
   name:       "DIY",
