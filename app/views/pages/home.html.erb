@@ -9,11 +9,11 @@
   <div class="tutorials-container">
     <div>
       <h4>Urtutor offers tutorials for:</h4>
-      <ul class="vertical-category-list">
+      <div class="vertical-category-list">
         <% @categories.each do |c| %>
-        <li class="list-item-category"><%= c %></li>
+        <a href="/tutorials?search=<%= c %>" class="list-item-category"><%= c %></a>
         <% end %>
-      </ul>
+      </div>
     </div>
 
     <div class="teaser-cards">
