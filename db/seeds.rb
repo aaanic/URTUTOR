@@ -57,9 +57,6 @@ categories_stuff = [
   name:       "Dancing",
 },
 {
-  name:       "Singing",
-},
-{
   name:       "Plants",
 },
 {
