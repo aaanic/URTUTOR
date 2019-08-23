@@ -15,4 +15,9 @@
   margin-bottom: 10px;
   background-color: #000;
   letter-spacing: 0.2em;
+  border: 1px solid #000;
+  &:hover{
+    background-color: transparent;
+    color: #000;
+  }
 }
