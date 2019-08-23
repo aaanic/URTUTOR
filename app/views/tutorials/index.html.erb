@@ -2,6 +2,7 @@
 
   <h1>Tutorials</h1>
   <div class="filter-container">
+    <div class="filter-cover">Filter by category</div>
     <div class="filter-by">Category: </div>
     <%= select_tag 'Category', options_for_select(@categories.collect{ |u| u.name }), class: "select-css"  %>
     <div class="reset-filter">RESET</div>
@@ -39,7 +40,14 @@
 </div>
 
 <script>
+  const filterContainer = document.querySelector('.filter-container');
+  const filterCover = document.querySelector('.filter-cover');
+  const hideShowFilter = () => {
+    console.log("working?");
+    filterCover.remove();
+  };
 
+  filterCover.addEventListener('click', hideShowFilter);
 
   const select = document.querySelector('select')
   const cards = [];
