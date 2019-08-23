@@ -11,26 +11,30 @@
 
 <div class="user-container">
 
-  <h2>You're the student:</h2>
-  <% @user.bought_tutorials.each do |b| %>
-  <div class="student-card">
-    <img src="<%= b.image_link %>" alt="" class="stu-card-img">
-    <div class="stu-card-text">
-      <h3><%= b.title %></h3>
-      <%= link_to "Go to tutorial", tutorial_path(b) %>
-      <p id="view-font"><%= b.lessons.count %> views</p>
+  <% if @user.bought_tutorials %>
+    <h2>You're the student:</h2>
+    <% @user.bought_tutorials.each do |b| %>
+    <div class="student-card">
+      <img src="<%= b.image_link %>" alt="" class="stu-card-img">
+      <div class="stu-card-text">
+        <h3><%= b.title %></h3>
+        <%= link_to "Go to tutorial", tutorial_path(b) %>
+        <p id="view-font"><%= pluralize b.lessons.size, "view" %></p>
+      </div>
     </div>
-  </div>
+    <% end %>
   <% end %>
 
-  <h2>You're the teacher:</h2>
-  <% @user.tutorials.each do |t| %>
-  <div class="student-card">
-    <img src="<%= t.image_link %>" alt="" class="stu-card-img">
-    <div class="stu-card-text">
-      <h3><%= t.title %></h3>
-      <%= link_to "Go to tutorial", tutorial_path(t) %>
-      <p id="view-font"><%= t.lessons.count %> views</p>
+  <% if @user.tutorials %>
+    <h2>You're the teacher:</h2>
+    <% @user.tutorials.each do |t| %>
+    <div class="student-card">
+      <img src="<%= t.image_link %>" alt="" class="stu-card-img">
+      <div class="stu-card-text">
+        <h3><%= t.title %></h3>
+        <%= link_to "Go to tutorial", tutorial_path(t) %>
+        <p id="view-font"><%= pluralize t.lessons.count, "view" %></p>
+      </div>
     </div>
-  </div>
+    <% end %>
   <% end %>
