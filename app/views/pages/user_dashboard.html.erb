@@ -18,8 +18,11 @@
       <img src="<%= b.image_link %>" alt="" class="stu-card-img">
       <div class="stu-card-text">
         <h3><%= b.title %></h3>
-        <%= link_to "Go to tutorial", tutorial_path(b) %>
-        <p id="view-font"><%= pluralize b.lessons.size, "view" %></p>
+        <div class="stu-card-details">
+           <p id="view-font"><%= pluralize b.lessons.size, "view" %></p>
+        <%= link_to "Go to tutorial ⟶", tutorial_path(b) %>
+
+        </div>
       </div>
     </div>
     <% end %>
@@ -32,8 +35,11 @@
       <img src="<%= t.image_link %>" alt="" class="stu-card-img">
       <div class="stu-card-text">
         <h3><%= t.title %></h3>
-        <%= link_to "Go to tutorial", tutorial_path(t) %>
-        <p id="view-font"><%= pluralize t.lessons.count, "view" %></p>
+        <div class="stu-card-details">
+           <p id="view-font"><%= pluralize t.lessons.count, "view" %></p>
+        <%= link_to "Go to tutorial ⟶", tutorial_path(t) %>
+
+        </div>
       </div>
     </div>
     <% end %>
