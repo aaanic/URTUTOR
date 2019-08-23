@@ -24,11 +24,12 @@
         <% liked_icon = likes.sample %>
         <div class="box">
           <div class="card-container">
-            <%= link_to tutorial_path(tut) do %>
             <div class="card">
-              <div class="card-left">
-                <div class="image" style="background-image: url(<%= tut.image_link %>)" ></div>
-              </div>
+            <%= link_to tutorial_path(tut) do %>
+                <div class="card-left">
+                  <div class="image" style="background-image: url(<%= tut.image_link %>)" ></div>
+                </div>
+              <% end %>
               <div class="card-right">
                 <div class="like-box">
                   <% if liked_icon == 'liked' %>
@@ -43,13 +44,14 @@
                   <h4><%= tut.title %></h4>
                 </div>
               </div>
-              <div class="card-action center btn-black">
-                <div class="white-text">
-                  Go to tutorial
+              <%= link_to tutorial_path(tut) do %>
+                <div class="card-action center btn-black">
+                  <div class="white-text">
+                    Go to tutorial
+                  </div>
                 </div>
-              </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
         </div>
         <% end %>
