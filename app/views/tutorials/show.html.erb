@@ -29,7 +29,7 @@
   <div class="content">
     <div  class="content-header">
       <div>
-        <p class="category-tag"><%= @tutorial.category.name %></p>
+        <a href="/tutorials?search=<%= @tutorial.category.name %>" class="category-tag"><%= @tutorial.category.name %></a>
       </div>
       <% if policy(@tutorial).edit? %>
       <p class="edit-button"><%= link_to "Edit", edit_tutorial_path %>

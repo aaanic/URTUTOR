@@ -1,5 +1,6 @@
 <div class="container padding-top">
 
+
   <h1>Tutorials</h1>
   <div class="filter-container">
     <div class="filter-cover">Filter by category</div>
@@ -73,8 +74,8 @@
 
   const filterCards = (filter) => {
     cards.forEach((card) => {
-      console.log(`the filter: ${filter}, category: ${card.category}`)
-      console.log(card.category == filter)
+      // console.log(`the filter: ${filter}, category: ${card.category}`)
+      // console.log(card.category == filter)
       if (card.category == filter) {
         card.html.style.display = 'block';
         card.html.hidden = false;
@@ -100,5 +101,16 @@
   };
 
   const resetFilter = document.querySelector('.reset-filter')
-  resetFilter.addEventListener('click', getBackAllCards)
-</script>
+  resetFilter.addEventListener('click', getBackAllCards);
+
+  const preSearchByBrandname = () => {
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let activeSearch = url.searchParams.get("search");
+    console.log(activeSearch);
+    if (activeSearch != null) {
+      filterCards(activeSearch);
+    }
+  }
+  preSearchByBrandname();
+// filterCards();</script>
